@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<!-- head -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MSc Finance & Big Data - Data visualization 2023</title>
+
+  <!-- bulma and font awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" crossorigin="anonymous">
+</head>
+
+<!-- body -->
+<body>
+
+  <!-- header -->
+  <section class="hero is-info is-bold">
+    <!-- todo: change assignment and name -->
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Data Visualization Assignment
+        </h1>
+        <h2 class="subtitle">
+          CASALINO Maxime
+          <h3 class="subtitle"></h3>
+          The aim of this project is to compare different investment strategies, with a 12-year history on 40 assets: equity, bonds and commodities. All data from Yfinance.
+          <h3>
+        </h2>
+      </div>
+    </div>
+
+    <!-- change navigation if needed -->
+    <div class="hero-foot">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#top">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              <span>Home</span>
+            </a>
+          </div>
+
+          <style>
+ 
+            #main-navbar .navbar-item, #main-navbar .navbar-link {
+                color: blue; 
+            }
+        
+            #main-navbar .navbar-dropdown .navbar-item {
+                color: blue; 
+            }
+        
+     
+            #main-navbar .navbar-item:hover, #main-navbar .navbar-link:hover {
+                color: blue; 
+            }
+        </style>
+        
+        <div id="main-navbar" class="navbar-menu">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="#viz">
+                    <span class="icon">
+                        <i class="fas fa-chart-area"></i>
+                    </span>
+                    <span>Visualizations</span>
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="#perfVsVolIframe">
+                        Performance vs Volume
+                    </a>
+                    </a>
+                    <a class="navbar-item" href="#risksIframe">
+                        Risks
+                    </a>
+                </div>
+            </div>
+        </div>
+
+          <div class="navbar-end">
+            <a class="navbar-item" href="#about">
+              <span class="icon">
+                <i class="fas fa-info-circle"></i>
+              </span>
+              <span>About</span>
+            </a>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <!-- modify if necessary (move visualizations in separate pages) -->
+      <h2 id="viz">Visualizations </h2>
+      <div class="iframe-container">
+          <iframe id="perfVsVolIframe" src="PerfvsVol.html" width="1600" height="800"></iframe>
+          <iframe id="risksIframe" src="Risks.html" width="1600" height="800"></iframe>
+ 
+      </div>
+      <h3>Interpretations</h3>
+
+      <p>
+        
+      In comparing different asset classes, the S&P 500, equities, often shows superior long-term returns but with higher volatility compared to specially constructed indices like price-weighted or equal-weighted ones.
+      While these alternative indices offer their own advantages, such as more balanced representation or reduced size bias, they typically do not outperform the S&P 500, which benefits from its focus on larger, more established companies.
+      Futhermore, Markowitz portfolio optimization can yield even higher returns than the S&P 500 by effectively balancing risk and return, it introduces additional complexities such as transaction costs and other operational expenses that are not factored into the theoretical model.
+      These real-world considerations can potentially offset some of the theoretical advantages of a Markowitz-optimized portfolio.
+      <h3>Discussion</h3>
+
+      <p>
+        I've faced challenges in creating clear, easily understandable graphs. Simplifying complex data and financial concepts into just one or two graphs for a complete representation is difficult. It's challenging to balance the need for detail with the necessity for clarity in such limited visual space.
+     
+      
+      </p>
+
+      <h3>Sources</h3>
+
+      <p>
+
+
+#output Visualization on the link
+        
+      </p>
+    </div>
+  </section>
+
+  <hr class="container">
+
+  <!-- about section -->
+  <!-- fill in, or link to a personal web page  -->
+  <section class="section">
+    <div class="container content">
+      <h2 id="about">
+        About Me
+      </h2>
+
+      <div class="media">
+        <div class="media-left">
+          <p class="image is-128x128">
+            <!-- replace with your profile image -->
+            <img src="ME.png">
+          </p>
+        </div>
+
+        <div class="media-content">
+            <p>
+              <!-- replace with your information -->
+              <strong>CASALINO Maxime</strong>
+              <br/>
+              I am currently working at Société Générale as an apprentice in rates research and strategy. In this role, I focus on analyzing and forecasting interest rate trends, as well as strategizing for interest rate products. I have a keen interest in automation and regularly employ Python to enhance efficiency in my work. This involves using Python for data analysis, process automation, and potentially for developing financial models.
+              <br/>
+              <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+              <a href="https://github.com/MaximeCSL/">
+                <span class="fab fa-github"></span>
+                <span>Github</span>
+              </a>
+              &bullet;
+              <a href="https://www.linkedin.com/in/maxime-casalino-96babb178/">
+                <span class="fab fa-linkedin"></span>
+                <span>LinkedIn</span>
+              </a>
+            </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <small>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span>Back to Top</span>
+        </a>
+        <br/>
+        <a href="https://www.neoma-bs.fr/formations/masteres-specialises-masters-of-science-temps-partiel/msc-in-finance-and-big-data/presentation-du-programme">MSc Finance & Big Data / Data visualization</a>
+        &bullet;
+        <a href="https://https://www.neoma-bs.fr/">Neoma Business School</a>
+      </small>
+    </div>
+  </footer>
+
+</body>
+</html>
