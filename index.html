@@ -7,31 +7,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>MSc Finance & Big Data - Data visualization 2023</title>
-
+ 
   <!-- bulma and font awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" crossorigin="anonymous">
+  
+  <style>
+    .hero.is-info {
+        background-color: #8a4d76; 
+    }
+
+    .navbar-item, .navbar-item:hover, #main-navbar .navbar-dropdown .navbar-item, #main-navbar .navbar-item:hover, #main-navbar .navbar-link:hover {
+        color: #8a4d76;
+    }
+
+    .button.is-primary, .tag.is-primary, .notification.is-primary {
+        background-color: #8a4d76; 
+        border-color: #8a4d76;
+    }
+
+    a, .button.is-primary:hover, .tag.is-primary:hover, .notification.is-primary:hover {
+        color: #8a4d76; 
+    }
+  </style>
 </head>
 
 <!-- body -->
 <body>
 
-  <!-- header -->
-  <section class="hero is-info is-bold">
-    <!-- todo: change assignment and name -->
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          Data Visualization Assignment
-        </h1>
-        <h2 class="subtitle">
-          CASALINO Maxime
-          <h3 class="subtitle"></h3>
-          The aim of this project is to compare different investment strategies, with a 12-year history on 40 assets: equity, bonds and commodities. All data from Yfinance.
-          <h3>
-        </h2>
+<!-- header -->
+<section class="hero is-info is-bold" style="padding: 10px 0;"> 
+  <div class="hero-body" style="padding: 0;">
+    <div class="container">
+      <div class="level">
+        <!-- Left side -->
+        <div class="level-left">
+          <div>
+            <h1 class="title" style="font-size: 24px;"> 
+              Data Visualization Assignment
+            </h1>
+            <h2 class="subtitle" style="font-size: 18px;"> 
+              CASALINO Maxime
+              <h3 class="subtitle" style="font-size: 16px;"> 
+                The aim of this project is to compare different investment strategies, with a 12-year history on 40 assets: equity, bonds and commodities. All data from Yfinance.
+              </h3>
+            </h2>
+          </div>
+        </div>
+        <!-- Right side -->
+        <div class="level-right">
+          <div class="level-item">
+            <p>
+              
+              <img src="ecole.png" style="max-width: 100px;"> 
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
 
     <!-- change navigation if needed -->
     <div class="hero-foot">
@@ -49,9 +85,6 @@
 
           <style>
  
-            #main-navbar .navbar-item, #main-navbar .navbar-link {
-                color: blue; 
-            }
         
             #main-navbar .navbar-dropdown .navbar-item {
                 color: blue; 
@@ -72,8 +105,12 @@
                     <span>Visualizations</span>
                 </a>
                 <div class="navbar-dropdown">
+
+                    <a class="navbar-item" href="#yearly_returns">
+                    Assets - Performance vs volatility
+                    </a>
                     <a class="navbar-item" href="#perfVsVolIframe">
-                        Performance vs Volume
+                        Index - Performance vs volatility
                     </a>
                     </a>
                     <a class="navbar-item" href="#risksIframe">
@@ -96,16 +133,51 @@
       </div>
     </div>
   </section>
+  <style>
+    
+    .hero.is-info {
+        background-color: #8a4d76; 
+    }
+
+    .navbar-item, .navbar-item:hover {
+        color: #8a4d76; 
+    }
+</style>
 
   <section class="section">
     <div class="container content">
       <!-- modify if necessary (move visualizations in separate pages) -->
       <h2 id="viz">Visualizations </h2>
       <div class="iframe-container">
-          <iframe id="perfVsVolIframe" src="PerfvsVol.html" width="1600" height="800"></iframe>
-          <iframe id="risksIframe" src="Risks.html" width="1600" height="800"></iframe>
- 
+        <iframe id="yearly_returns" src="yearly_returns.html" width="1400" height="800"></iframe>
+        <iframe id="tab_assets" src="tab_assets.html" width="1400" height="400"></iframe>
+        <p>
+          The bars are descending in order, starting with Technology sector which has the highest return and going down to Crude Oil, which has a negative return. 
+        <iframe id="4PC.html" src="4PC.html" width="1400" height="400"></iframe>
+        <p>
+          We see that Technologie sector has the highest annualized return at 24.2% and a high Sharpe Ratio of 96, meaning it has provided good returns relative to its risk. 
+          In contrast, Brazil Stock has experienced a negative return of -6.3% and a negative Sharpe Ratio, indicating poor performance when adjusting for risk.
+          On the other hand, US Treasury Bond ETF shows a negative return, reflecting a challenging period for those bonds. But we have to choose real bond value, not available in Yfinance API.
+
+    </div>
+      <div class="iframe-container">
+          <iframe id="perfVsVolIframe" src="PerfvsVol.html" width="1300" height="800"></iframe>
+          <iframe id="tab_index" src="tab_index.html" width="1400" height="400"></iframe>
+
       </div>
+
+
+      <div class="iframe-container">
+        <iframe id="MC" src="MC.html" width="1300" height="400"></iframe>
+        <iframe id="risksIframe" src="Risks.html" width="1300" height="600"></iframe>
+        <p>
+          The Value at Risk (VaR) is -13.48%, meaning there's a 5% chance of returns being worse than this. 
+          The Conditional Value at Risk (CVaR) is even lower at -18.22%, indicating the average loss in the worst 5% of scenarios. 
+          On the upside, the Max Return at 5% is 23.87%, with an average of the best returns at 28.62%. 
+    </div>
+
+
+
       <h3>Interpretations</h3>
 
       <p>
@@ -123,11 +195,15 @@
       </p>
 
       <h3>Sources</h3>
+        <a href="https://github.com/MaximeCSL/Data_VIZ/">
+          <span class="fab fa-github"></span>
+          <span>Github Data Viz project</span>
+        </a>
 
       <p>
 
 
-#output Visualization on the link
+
         
       </p>
     </div>
